@@ -7,12 +7,12 @@ const cors = require("cors");
 
 const app = express();
 
-
 app.use(cors({
-  origin: ["http://localhost:5173", "https://estrellametals.com"],
+  origin: "https://estrellametals.com",
   methods: ["GET", "POST"],
-  allowedHeaders: ["Content-Type"],
+  allowedHeaders: ["Content-Type"]
 }));
+
 
 app.use(express.static('public', { extensions: ['js'], mimeType: 'application/javascript' }));
 app.use(express.json());

@@ -2,17 +2,17 @@ require("dotenv").config();
 const express = require("express");
 const port = process.env.PORT || 5001;
 ;
-const nodemailer = require("nodemailer");
 const cors = require("cors");
+const nodemailer = require("nodemailer");
 
 const app = express();
 
-app.use(cors({
-  origin: "https://estrellametals.com",
-  methods: ["GET", "POST"],
-  allowedHeaders: ["Content-Type"]
-}));
 
+app.use(cors({
+  origin: "https://www.estrellametals.com",
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"],
+}));
 
 app.use(express.static('public', { extensions: ['js'], mimeType: 'application/javascript' }));
 app.use(express.json());
@@ -43,7 +43,9 @@ const transporter = nodemailer.createTransport({
 
 app.post("/send-email", async (req, res) => {
 
-  const { name, contact, email, message } = req.body;
+  console.log(req.body);
+  
+  const { name, phone, email, message } = req.body;
 
   try {
 
@@ -58,7 +60,7 @@ app.post("/send-email", async (req, res) => {
           <hr style="border: 1px solid #D4A017;">
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> <a href="mailto:${email}" style="color: #D4A017;">${email}</a></p>
-          <p><strong>Contact No:</strong> ${contact}</p>
+          <p><strong>Contact No:</strong> ${phone}</p>
           <p><strong>Message:</strong></p>
           <p style="background: #E5E5E5; padding: 10px; border-left: 4px solid #D4A017;">${message}</p>
           <hr style="border: 1px solid #D4A017;">

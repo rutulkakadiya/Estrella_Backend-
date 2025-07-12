@@ -49,7 +49,7 @@ app.post("/send-email", async (req, res) => {
 
     let mailOptions = {
       from: process.env.EMAIL_USER,  // No-reply email for professional touch
-      to: "rutulkakadiya0709@gmail.com",  // Recipient email
+      to: "contact@estrellametals.com",  // Recipient email
       subject: `Contact Inquiry`,  // Subject updated for insurance website
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #212121;">

@@ -15,8 +15,6 @@ app.use(cors({
 }));
 
 app.use(express.static('public', { extensions: ['js'], mimeType: 'application/javascript' }));
-
-
 app.use(express.json());
 
 

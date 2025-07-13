@@ -19,24 +19,24 @@ app.use(express.json());
 
 
 
-const transporter = nodemailer.createTransport({
-  host: "smtp.hostinger.com", // Replace with your webmail SMTP server
-  port: 465, // Use 465 for SSL, 587 for TLS
-  secure: true,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-});
-
-
 // const transporter = nodemailer.createTransport({
-//   service: "gmail",
+//   host: "smtp.hostinger.com", // Replace with your webmail SMTP server
+//   port: 465, // Use 465 for SSL, 587 for TLS
+//   secure: true,
 //   auth: {
-//     user: process.env.EMAIL_USER, // your Gmail address
-//     pass: process.env.EMAIL_PASS, // your Gmail App Password
+//     user: process.env.EMAIL_USER,
+//     pass: process.env.EMAIL_PASS,
 //   },
 // });
+
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.EMAIL_USER, // your Gmail address
+    pass: process.env.EMAIL_PASS, // your Gmail App Password
+  },
+});
 
 
 

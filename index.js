@@ -20,7 +20,7 @@ app.use(express.json());
 
 
 const transporter = nodemailer.createTransport({
-  host: "mail.easywayitsolutions.com", // Replace with your webmail SMTP server
+  host: "smtp.hostinger.com", // Replace with your webmail SMTP server
   port: 465, // Use 465 for SSL, 587 for TLS
   secure: true,
   auth: {
